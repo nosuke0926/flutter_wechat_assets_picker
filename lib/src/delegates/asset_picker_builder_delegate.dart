@@ -690,12 +690,15 @@ class DefaultAssetPickerBuilderDelegate
     this.previewThumbnailSize,
     this.specialPickerType,
     this.keepScrollOffset = false,
+    this.banner,
   }) {
     // Add the listener if [keepScrollOffset] is true.
     if (keepScrollOffset) {
       gridScrollController.addListener(keepScrollOffsetListener);
     }
   }
+
+  final Widget? banner;
 
   /// [ChangeNotifier] for asset picker.
   /// 资源选择器状态保持
@@ -2221,14 +2224,25 @@ class DefaultAssetPickerBuilderDelegate
           value: provider,
           builder: (BuildContext context, _) => Material(
             color: theme.canvasColor,
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                if (isAppleOS(context))
-                  appleOSLayout(context)
-                else
-                  androidLayout(context),
-                if (Platform.isIOS) iOSPermissionOverlay(context),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: <Widget>[
+                      if (isAppleOS(context))
+                        appleOSLayout(context)
+                      else
+                        androidLayout(context),
+                      if (Platform.isIOS) iOSPermissionOverlay(context),
+                    ],
+                  ),
+                ),
+                if (banner != null)
+                  SafeArea(
+                    top: false,
+                    child: banner!,
+                  ),
               ],
             ),
           ),

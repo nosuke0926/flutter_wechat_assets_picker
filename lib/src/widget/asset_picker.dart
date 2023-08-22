@@ -42,6 +42,7 @@ class AssetPicker<Asset, Path> extends StatefulWidget {
     AssetPickerConfig pickerConfig = const AssetPickerConfig(),
     bool useRootNavigator = true,
     AssetPickerPageRouteBuilder<List<AssetEntity>>? pageRouteBuilder,
+    Widget? banner,
   }) {
     return _pickerDelegate.pickAssets(
       context,
@@ -49,6 +50,7 @@ class AssetPicker<Asset, Path> extends StatefulWidget {
       pickerConfig: pickerConfig,
       useRootNavigator: useRootNavigator,
       pageRouteBuilder: pageRouteBuilder,
+      banner: banner,
     );
   }
 

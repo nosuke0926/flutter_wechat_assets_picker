@@ -63,6 +63,7 @@ class AssetPickerDelegate {
     AssetPickerConfig pickerConfig = const AssetPickerConfig(),
     bool useRootNavigator = true,
     AssetPickerPageRouteBuilder<List<AssetEntity>>? pageRouteBuilder,
+    Widget? banner,
   }) async {
     final PermissionState ps = await permissionCheck();
     final AssetPickerPageRoute<List<AssetEntity>> route =
@@ -101,6 +102,7 @@ class AssetPickerDelegate {
         textDelegate: pickerConfig.textDelegate,
         themeColor: pickerConfig.themeColor,
         locale: Localizations.maybeLocaleOf(context),
+        banner: banner,
       ),
     );
     final List<AssetEntity>? result = await Navigator.of(
