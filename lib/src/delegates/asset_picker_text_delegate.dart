@@ -590,25 +590,24 @@ class JapaneseAssetPickerTextDelegate extends AssetPickerTextDelegate {
   String get unSupportedAssetType => '未対応のフォーマット';
 
   @override
-  String get unableToAccessAll => 'すべてのリソースへのアクセスができない';
+  String get unableToAccessAll => 'すべての動画へのアクセス許可がありません';
 
   @override
-  String get viewingLimitedAssetsTip => 'アプリは一部のリソースと'
-      '写真にしかアクセスできない';
+  String get viewingLimitedAssetsTip => 'アプリは一部のリソースにしかアクセスできません';
 
   @override
   String get changeAccessibleLimitedAssets => 'アクセスできるリソースを設定する';
 
   @override
-  String get accessAllTip => 'アプリがデバイスのリソースの一部にのみ'
+  String get accessAllTip => 'アプリが端末内の一部の動画にのみ'
       'アクセスするように設定されています。'
-      '「すべてのリソース」へのアクセスを許可することを推奨します';
+      '「すべてのリソース」へのアクセスを許可することでより快適にアプリを使えます。';
 
   @override
   String get goToSystemSettings => '「システム設定」に移動';
 
   @override
-  String get accessLimitedAssets => 'リソースの一部へのアクセスを続行';
+  String get accessLimitedAssets => 'アクセス制限を続ける';
 
   @override
   String get accessiblePathName => 'アクセスできるリソース';
